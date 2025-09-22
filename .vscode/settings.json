@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.py": "python",
+        "qpushbutton": "cpp",
+        "qvideowidget": "cpp",
+        "qdebug": "cpp"
+    }
+}
