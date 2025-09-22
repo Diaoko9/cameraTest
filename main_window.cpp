@@ -11,7 +11,7 @@
 #include <QVBoxLayout>
 #include <QApplication>
 #include <QDebug>
-#include <python3.12/Python.h>;
+#include <python3.12/Python.h>
 
 MainWindow::MainWindow(QWidget *parent)
     :QWidget(parent)
@@ -42,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent)
         status_label = new QLabel("Hi Raspi W!!!", this);
         py_label = new QLabel(this);
 
-        py_label->text()
+        py_label->text();
 
         QVBoxLayout *vlayout = new QVBoxLayout(this);
         vlayout->addWidget(status_label);
