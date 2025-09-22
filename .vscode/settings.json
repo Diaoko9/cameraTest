@@ -3,6 +3,9 @@
         "*.py": "python",
         "qpushbutton": "cpp",
         "qvideowidget": "cpp",
-        "qdebug": "cpp"
+        "qdebug": "cpp",
+        "qmediacapturesession": "cpp",
+        "qlabel": "cpp",
+        "qvboxlayout": "cpp"
     }
 }
