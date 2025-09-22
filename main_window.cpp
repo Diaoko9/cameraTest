@@ -11,7 +11,9 @@
 #include <QVBoxLayout>
 #include <QApplication>
 #include <QDebug>
-#include <python3.12/Python.h>
+#include <QColor>
+#include <QPalette>
+//#include <Python.h>
 
 MainWindow::MainWindow(QWidget *parent)
     :QWidget(parent)
@@ -20,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     setFixedSize(600, 600);
     setWindowTitle("myApp");
 
-    Py_Initialize();
+    //Py_Initialize();
 
     const QList<QCameraDevice> cameras = QMediaDevices::videoInputs();
     if (cameras.isEmpty()){
@@ -40,9 +42,27 @@ MainWindow::MainWindow(QWidget *parent)
         m_videoWidget = new QVideoWidget(this);
         m_toggleButton = new QPushButton("Stop", this);
         status_label = new QLabel("Hi Raspi W!!!", this);
+
+
         py_label = new QLabel(this);
 
-        py_label->text();
+        QFont answerFont =py_label->font();
+        answerFont.setPointSize(32);
+        answerFont.setBold(true);
+        answerFont.setFamily("arial");
+
+        QPalette answerPalette = py_label->palette();
+        answerPalette.setColor(QPalette::WindowText, Qt::darkBlue);
+
+
+        py_label->setFrameStyle(QFrame::Panel | QFrame::Sunken|QFrame::Box);
+        py_label->setText("answer from python");
+        py_label->setFont(answerFont);
+        py_label->setPalette(answerPalette);
+        //py_label->setStyleSheet("color: red; font-weight: bold; font-family: arial;");
+        py_label->size();
+        py_label->setAlignment(Qt::AlignCenter | Qt::AlignCenter);
+
 
         QVBoxLayout *vlayout = new QVBoxLayout(this);
         vlayout->addWidget(status_label);
@@ -59,7 +79,7 @@ MainWindow::MainWindow(QWidget *parent)
 
         m_camera->start();
 
-        Py_Finalize();
+        //Py_Finalize();
 
     }
 
