@@ -13,7 +13,11 @@
 #include <QDebug>
 #include <QColor>
 #include <QPalette>
-//#include <Python.h>
+//
+#pragma push_macro("slots")
+#undef slots
+#include <Python.h>
+#pragma pop_macro("slots")
 
 MainWindow::MainWindow(QWidget *parent)
     :QWidget(parent)
@@ -22,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
     setFixedSize(600, 600);
     setWindowTitle("myApp");
 
-    //Py_Initialize();
+    Py_Initialize();
 
     const QList<QCameraDevice> cameras = QMediaDevices::videoInputs();
     if (cameras.isEmpty()){

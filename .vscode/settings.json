@@ -6,6 +6,10 @@
         "qdebug": "cpp",
         "qmediacapturesession": "cpp",
         "qlabel": "cpp",
-        "qapplication": "cpp"
+        "qapplication": "cpp",
+        "qcamera": "cpp",
+        "qmediadevices": "cpp",
+        "qvboxlayout": "cpp",
+        "qtwidgets": "cpp"
     }
 }
